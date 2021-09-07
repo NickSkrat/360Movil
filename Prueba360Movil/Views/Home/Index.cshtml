@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model _360Movil.Repository.Container
+
+@using (Html.BeginForm("getContainer", "Home", FormMethod.Get))
+{
+    <div class="row divCenter">
+        <div class="img-responsive">
+            <img id="img1" src="~/Assets/img/Medlog.png" />
+        </div>
+    </div>
+
+    <h3 class="h3 text-center">Consultar EIR</h3>
+    <div class="jumbotron">
+        <div class="divCenter">
+            <div class="col-lg-4">
+                <label for="eir" class="control-label">EIR</label>
+                @Html.TextBoxFor(x => x.eir, new { @class = "form-control" })
+
+                @if (!String.IsNullOrEmpty(ViewBag.Container))
+                {
+                    <label class="control-label">Contenedor</label>
+                    @Html.TextBoxFor(x => x.container, new { @readonly = "readonly", @class = "form-control" })
+
+                    <label class="control-label">Sello</label>
+                    @Html.TextBoxFor(x => x.stamp, new { @readonly = "readonly", @class = "form-control" })
+
+                    <label class="control-label">Responsable</label>
+                    @Html.TextBoxFor(x => x.responsable.RespomnsableName, new { @readonly = "readonly", @class = "form-control" })
+
+                    <label class="control-label">Empresa</label>
+                    @Html.TextBoxFor(x => x.company.companyName, new { @readonly = "readonly", @class = "form-control" })
+                }
+
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </div>
+        </div>
+    </div>
+
+    if (!String.IsNullOrEmpty(ViewBag.Alert))
+    {
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            @ViewBag.Alert
+        </div>
+    }
+}
