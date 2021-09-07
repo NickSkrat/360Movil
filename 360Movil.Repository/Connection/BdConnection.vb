@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Module BdConnection
+    'Cambiar si es posible las crendenciales del connection string
     Public Connection As New SqlConnection("Data Source=localhost; Initial Catalog=360Movil; User ID=sa; Password=Test_Movil360")
 
     Sub Open_Connection()
