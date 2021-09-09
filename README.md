@@ -1,14 +1,14 @@
 # 360Movil
 
-#Contexto
+# Contexto
 
 * Creación del proyecto 360Movil desarrollado en .NetFramework MVC5 con capa de repositorio en Visual Basic.
 
-#Creacion de base de datos
+# Creacion de base de datos
 
 * Ejecutar el archivo sql ubicado en raiz del proyecto **360Movil.sql**.
 
-#Connection String
+# Connection String
 
 * En la ruta **360Movil.Repository/Connection/BdConnection.vb** en caso de que si es necesario la cadena de conexión en la linea 5.
 
